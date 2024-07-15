@@ -1,0 +1,185 @@
+{
+	"name": "bookmark",
+	"displayName": "Bookmark",
+	"description": "The best lines",
+	"version": "0.0.12",
+	"publisher": "solomonkinard",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/solomonkinard/public"
+	},
+	"icon": "media/icon.png",
+	"keywords": [
+		"bookmarks",
+		"bookmark",
+		"favorite",
+		"favorites",
+		"file",
+		"markers",
+		"navigation",
+		"menu",
+		"line",
+		"lines"
+	],
+	"categories": [
+		"SCM Providers"
+	],
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "bookmark.add",
+				"title": "Add",
+				"icon": "$(plus)"
+			},
+			{
+				"command": "bookmark.removeLine",
+				"title": "Remove line",
+				"icon": "$(remove)"
+			},
+			{
+				"command": "bookmark.showMenu",
+				"title": "Menu",
+				"icon": "$(find-selection)"
+			},
+			{
+				"command": "bookmark.removeFilepath",
+				"title": "Remove file",
+				"icon": "$(remove)"
+			},
+			{
+				"command": "bookmark.removeAll",
+				"title": "Remove all",
+				"icon": "$(remove)"
+			},
+			{
+				"command": "bookmark.gotoPrevBookmark",
+				"title": "Goto previous bookmark"
+			},
+			{
+				"command": "bookmark.gotoNextBookmark",
+				"title": "Goto next bookmark"
+			},
+			{
+				"command": "bookmark.toggleBookmark",
+				"title": "Toggle bookmark"
+			},
+			{
+				"command": "bookmark.menu",
+				"title": "Bookmark: Menu"
+			}
+		],
+		"views": {
+			"bookmark-explorer": [
+				{
+					"id": "bookmark.explorer",
+					"name": "bookmark",
+					"when": "workspaceFolderCount >= 1"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "bookmark.add",
+					"when": "view == bookmark.explorer",
+					"group": "navigation"
+				},
+				{
+					"command": "bookmark.removeAll",
+					"when": "view == bookmark.explorer"
+				},
+				{
+					"command": "bookmark.showMenu",
+					"when": "view == bookmark.explorer",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "bookmark.removeLine",
+					"when": "view == bookmark.explorer && viewItem == line",
+					"group": "inline"
+				},
+				{
+					"command": "bookmark.removeFilepath",
+					"when": "view == bookmark.explorer && viewItem == filepath",
+					"group": "inline"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "bookmark-explorer",
+					"title": "Bookmark",
+					"icon": "media/activity.svg"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "bookmark.toggleBookmark",
+				"key": "ctrl+alt+k",
+				"mac": "cmd+alt+k",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "bookmark.gotoNextBookmark",
+				"key": "ctrl+alt+l",
+				"mac": "cmd+alt+l"
+			},
+			{
+				"command": "bookmark.gotoPreviousBookmark",
+				"key": "ctrl+alt+j",
+				"mac": "cmd+alt+j"
+			}
+		]
+	},
+	"scripts": {
+		"compile": "npm run esbuild",
+		"watch": "tsc -watch -p ./",
+		"vscode:prepublish": "npm run clean && npm run esbuild-base -- --minify",
+		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+		"esbuild": "npm run esbuild-base -- --sourcemap",
+		"esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"clean": "rm -rf out/*",
+		"package": "vsce package -o ~/tmp/"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.74.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"@vscode/test-electron": "^2.2.0",
+		"eslint": "^8.28.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.1.0",
+		"typescript": "^4.9.3",
+		"esbuild": "^0.16.17"
+	},
+	"__metadata": {
+		"id": "01dc1aa0-6593-4bd5-b603-60fe58dd1c85",
+		"publisherId": "e14ece89-5451-4498-84e6-da39a47610d5",
+		"publisherDisplayName": "solomonkinard",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1716338691770,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

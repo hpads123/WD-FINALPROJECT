@@ -1,0 +1,24 @@
+23:48:34.543 info extension stopping host
+23:48:57.563 info extension stopping host
+23:49:02.630 info extension stopping host
+23:49:03.510 info host ------------ starting ------------
+23:49:03.593 info extension host process output: port:[54668]
+23:49:03.595 info extension 
+23:49:03.656 info host client connected: extension { address: '127.0.0.1', family: 'IPv4', port: 54668 }
+23:49:03.670 info host starting host: {"extensionFolder":"/Users/hanzpadilla/.vscode/extensions/wallabyjs.console-ninja-1.0.323","runtimeHookFile":"/Users/hanzpadilla/.vscode/extensions/wallabyjs.console-ninja-1.0.323/out/runtimeHook/tracer.js","globalErrorHandlerFile":"/Users/hanzpadilla/.vscode/extensions/wallabyjs.console-ninja-1.0.323/out/runtimeHook/errorHandler.js","networkLoggingHandlerFile":"/Users/hanzpadilla/.vscode/extensions/wallabyjs.console-ninja-1.0.323/out/runtimeHook/networkLoggingHandler.js","filesToInstrument":[{"path":"/Users/hanzpadilla/Desktop/ACAD/SW2/index.html","reason":"open"}],"debug":false,"config":{"dateTimeFormat":"HH:mm:ss.SSS","dateTimeDisplayMode":"Absolute","installBinToPath":true,"openLinksInEditor":true,"maxLogViewerEntries":15000,"showWelcomeMessageInTools":true,"fontSize":10,"outputMode":"Beside File","captureFunctions":false,"searchUrl":"https://www.google.com/search?q={query}","enableProFeatures":true,"toolsToAutoPatch":["vite","angular","jest","webpack","next.js","nest.js","cypress","http-server","serve","live-server","nuxt","remix","qwik","hydrogen","serverless","astro"],"showErrors":true,"showLogsOnlyFromOpenedFiles":false,"showLogsFromLogPointsOnly":false,"showLogsFromMultipleRunningToolsTogether":false,"predictiveLoggingEnabled":true,"allowConsoleLogToTriggerPredictions":false,"showNetworkRequests":true},"allowedHosts":["localhost","127.0.0.1","example.cypress.io","CADET-207.local","192.168.100.2"],"host":"127.0.0.1","forcedStart":false,"startTime":1716652142637}
+23:49:03.753 info host starting tools discovery and integration
+23:49:03.769 info host installing /Users/hanzpadilla/.console-ninja/.bin/loader.js
+23:49:03.775 info host installing /Users/hanzpadilla/.console-ninja/.bin/console-ninja
+23:49:03.780 info host looking for tools to patch
+23:49:03.849 info host found 0 tool file(s) to patch
+23:49:03.855 info host completed tools discovery and integration
+23:49:03.863 ERR! host uncaught exception: No clients connected
+23:49:04.006 info host worker Starting Host Worker...
+23:50:25.146 info extension stopping host
+23:50:25.149 info host removing cache folder: 60e727ca0fddbfd36bff9ba1129da53a
+23:50:25.150 ERR! extension error processing message: {
+23:50:25.151 ERR! extension   method: 'requestedFeaturesAreNotAvailable',
+23:50:25.151 ERR! extension   args: [],
+23:50:25.151 ERR! extension   sequenceNumber: 0
+23:50:25.151 ERR! extension }, Canceled: Canceled
+23:52:42.694 info extension stopping host
